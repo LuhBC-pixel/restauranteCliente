@@ -12,6 +12,7 @@ export const Input = ({
       autoCapitalize={autoCapitalize}
       placeholder={placeholder}
       keyboardType={keyboardType}
+      placeholderTextColor='#fff'
       {...rest}
     />
   );

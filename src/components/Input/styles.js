@@ -6,5 +6,7 @@ export const Container = styled.TextInput`
   border-radius: 8px;
   border: 1px solid #ddd;
   padding: 15px;
-  margin-bottom: 10px
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 16px;
 `;

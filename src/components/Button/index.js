@@ -5,7 +5,7 @@ export const Button = ({ title, onPress, titleProps, ...rest }) => {
   const [color, setColor] = useState('#fff');
 
   return (
-    <Container activeOpacity={0.8} onPress={onPress}>
+    <Container activeOpacity={0.7} onPress={onPress}>
       <Title style={{ color: color }} {...titleProps}>
         {title}
       </Title>

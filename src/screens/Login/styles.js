@@ -1,19 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.View`
-  padding: 0 10px;
-  height: 100%;
-  display: flex;
+  flex: 1;
+  background-color: #333;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
 `;
 
 export const Content = styled.View`
-  padding: 60px 40px;
+  padding: 40px 40px;
   width: 80%;
-  border-radius: 8px;
-  background-color: #fff;
-`
+  background-color: #333;
+`;
 
-export const Title = styled.Text``
+export const Title = styled.Text`
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+`;
