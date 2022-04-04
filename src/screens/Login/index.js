@@ -1,23 +1,35 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { Container, Content, Title } from './styles';
+import { useAuth } from '../../hooks/useAuth';
+import {
+  Container,
+  Content,
+  Title,
+  SignUpContainer,
+  SignUpText,
+  ButtonSignUp,
+} from './styles';
 
 export const Login = () => {
+  const navigator = useNavigation();
+  const { login } = useAuth();
+
   return (
     <Container>
       <Title>Login</Title>
       <Content>
         <Input placeholder='Email' />
         <Input placeholder='Senha' secureTextEntry />
-        <Button title='Entrar' />
+        <Button title='Entrar' onPress={login} />
 
-        <View style={{ flex: 1 }}>
-          <Text style={{ flex: 1, color: '#fff' }}>
-            Não tem uma conta? Cadastre aqui!
-          </Text>
-        </View>
+        <SignUpContainer>
+          <ButtonSignUp>
+            <SignUpText onPress={() => navigator.navigate('SignUp')}>
+              Não tem uma conta? Cadastre aqui!
+            </SignUpText>
+          </ButtonSignUp>
+        </SignUpContainer>
       </Content>
     </Container>
   );

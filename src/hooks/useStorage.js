@@ -29,9 +29,9 @@ export const useStorage = (key) => {
     }
   };
 
-  return {
+  return [
     getItem,
     setItem,
     removeItem,
-  };
+  ];
 };
