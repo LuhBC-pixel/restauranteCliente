@@ -12,7 +12,13 @@ export const UnLoggedRoutes = () => {
     <NavigationContainer>
       <Navigator initialRouteName='Login'>
         <Screen name='Login' component={Login} />
-        <Screen name='SignUp' component={SignUp} />
+        <Screen
+          name='SignUp'
+          component={SignUp}
+          options={{
+            title: 'Cadastro',
+          }}
+        />
       </Navigator>
     </NavigationContainer>
   );

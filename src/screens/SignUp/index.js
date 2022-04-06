@@ -15,9 +15,13 @@ export const SignUp = () => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = async () => {
-    const res = api.get('/users').then((res) => {
-      console.log(res);
-    });
+    const user = {
+      id: faker.datatype.uuid(),
+      name,
+      email,
+      password
+    }
+    const res = await api.post("/users", user)
   };
 
   return (
@@ -30,8 +34,9 @@ export const SignUp = () => {
           placeholder='Senha'
           onChangeText={setPassword}
           value={password}
+          secureTextEntry
         />
-        <Input placeholder='Digite a senha novamente' />
+        <Input placeholder='Digite a senha novamente' secureTextEntry />
         <Button title='Cadastrar' onPress={handleSubmit} />
       </Content>
     </Container>

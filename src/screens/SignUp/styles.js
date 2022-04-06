@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import { KeyboardAvoidingView } from 'react-native';
 
-export const Container = styled.View`
+
+export const Container = styled(KeyboardAvoidingView).attrs({
+  behavior: "padding"
+})`
   flex: 1;
   background-color: #333;
   justify-content: center;
@@ -8,7 +12,7 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-  padding: 40px 40px;
+  padding: 10px 40px;
   width: 90%;
   height: 50%;
   background-color: #333;

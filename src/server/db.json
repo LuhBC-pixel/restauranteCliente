@@ -1,16 +1,35 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "John",
-      "email": "abc@def.com",
-      "password": "123456"
+      "id": "2506cc3b-b75f-4e66-9952-022e9a781e34",
+      "name": "jsjdnrb",
+      "email": "dhdbdbf",
+      "password": "dhdbdbf"
     },
     {
-      "id": 2,
-      "name": "Fernando",
-      "email": "123@gmail.com",
+      "id": "bad330e2-dd51-40e6-b700-2692c46aa9ae",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "084cc7ea-fc29-472d-8e24-5d13296d8606",
+      "name": "luisa",
+      "email": "luisa@gmail.com",
       "password": "123456"
+    }
+  ],
+  "mesas": [
+    {
+      "id": "1",
+      "items": [
+        {
+          "id": "1",
+          "name": "agua",
+          "price": 3,
+          "status": "delivered"
+        }
+      ]
     }
   ]
 }

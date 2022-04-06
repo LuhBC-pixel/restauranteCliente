@@ -14,7 +14,6 @@ export default function App() {
     async function prepare() {
       try {
         await checkAuth();
-        console.log(appReady);
       } catch (e) {
         console.warn(e);
       }
@@ -24,7 +23,7 @@ export default function App() {
   }, [appReady]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: '#333' }}>
       <SafeAreaView style={{ flex: 1 }}>
         {appReady ? <Routes /> : <Text>Carregando...</Text>}
       </SafeAreaView>
