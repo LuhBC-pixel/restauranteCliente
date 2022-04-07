@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { KeyboardAvoidingView } from 'react-native';
 
-
 export const Container = styled(KeyboardAvoidingView).attrs({
-  behavior: "padding"
+  behavior: 'padding',
 })`
   flex: 1;
   background-color: #333;

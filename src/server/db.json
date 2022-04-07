@@ -19,17 +19,40 @@
       "password": "123456"
     }
   ],
-  "mesas": [
+  "tables": [
     {
-      "id": "1",
-      "items": [
-        {
-          "id": "1",
-          "name": "agua",
-          "price": 3,
-          "status": "delivered"
-        }
-      ]
+      "uuid": "32435245",
+      "number": 19,
+      "details": "ABC001"
+    },
+    {
+      "uuid": "324352674567",
+      "number": 20,
+      "details": "ABC002"
     }
-  ]
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Coca-Cola",
+      "price": "1.5",
+      "description": "Bebida",
+      "category_uuid": "32435245"
+    },
+    {
+      "id": 2,
+      "name": "Fanta",
+      "price": "1.5",
+      "description": "Bebida",
+      "category_uuid": "32135245"
+    },
+    {
+      "id": 3,
+      "name": "Sprite",
+      "price": "1.5",
+      "description": "Bebida",
+      "category_uuid": "32435246"
+    }
+  ],
+  "orders": []
 }

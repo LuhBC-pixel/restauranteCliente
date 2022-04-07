@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Text, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+
 import { api } from '../../api';
+import { ORDER_TYPES } from '../../store/OrderReducer';
 
 import { BarCodeBox, MainText, Container } from './styles';
 
@@ -9,6 +13,9 @@ export const Home = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [text, setText] = useState('Nada escaneado');
+
+  const navigatior = useNavigation();
+  const dispatch = useDispatch();
 
   const askForCameraPermission = () => {
     (async () => {
@@ -26,8 +33,12 @@ export const Home = () => {
   const handleBarCodeScanned = async ({ type, data }) => {
     setScanned(true);
     setText(data);
-    const res = await api.get(data)
-    console.log(res)
+    const response = await api.get(data);
+    dispatch({
+      type: ORDER_TYPES.MENU_LOADED,
+      payload: response.data,
+    });
+    navigatior.navigate('Results');
   };
 
   // Check permissions and return the screens
@@ -59,7 +70,10 @@ export const Home = () => {
           style={{ height: 400, width: 400 }}
         />
       </BarCodeBox>
-      <Text>Faça a leitura do código qr localizado na sua mesa para ter acesso ao cardápio</Text>
+      <Text>
+        Faça a leitura do código qr localizado na sua mesa para ter acesso ao
+        cardápio
+      </Text>
       <MainText>{text}</MainText>
 
       {scanned && (
