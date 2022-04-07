@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Text, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
@@ -14,8 +14,21 @@ export const Home = () => {
   const [scanned, setScanned] = useState(false);
   const [text, setText] = useState('Nada escaneado');
 
-  const navigatior = useNavigation();
+  const navigation = useNavigation();
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setScanned(false);
+      setHasPermission(null);
+      setText('Nada escaneado');
+
+      // Request Camera Permission
+      askForCameraPermission();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   const askForCameraPermission = () => {
     (async () => {
@@ -23,11 +36,6 @@ export const Home = () => {
       setHasPermission(status === 'granted');
     })();
   };
-
-  // Request Camera Permission
-  useEffect(() => {
-    askForCameraPermission();
-  }, []);
 
   // What happens when we scan the bar code
   const handleBarCodeScanned = async ({ type, data }) => {
@@ -38,7 +46,7 @@ export const Home = () => {
       type: ORDER_TYPES.MENU_LOADED,
       payload: response.data,
     });
-    navigatior.navigate('Results');
+    navigation.navigate('Results');
   };
 
   // Check permissions and return the screens
