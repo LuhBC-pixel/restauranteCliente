@@ -52,6 +52,41 @@
       "price": "1.5",
       "description": "Bebida",
       "category_uuid": "32435246"
+    },
+    {
+      "id": 4,
+      "name": "Cerveja",
+      "price": "3",
+      "description": "Bebida",
+      "category_uuid": "32435810"
+    },
+    {
+      "id": 5,
+      "name": "Pizza",
+      "price": "10",
+      "description": "Comida",
+      "category_uuid": "8458509"
+    },
+    {
+      "id": 6,
+      "name": "Hamburguer",
+      "price": "10",
+      "description": "Comida",
+      "category_uuid": "8093453"
+    },
+    {
+      "id": 7,
+      "name": "Suco",
+      "price": "5",
+      "description": "Bebida",
+      "category_uuid": "30342342"
+    },
+    {
+      "id": 8,
+      "name": "Coxinha",
+      "price": "5",
+      "description": "Comida",
+      "category_uuid": "04302342"
     }
   ],
   "orders": []

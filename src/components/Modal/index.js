@@ -14,7 +14,14 @@ export const Modal = ({ modalVisible, setModalVisible, item }) => {
         }}
       >
         <Container>
-          <ModalView>
+          <ModalView
+            style={{
+              shadowOpacity: 0.75,
+              shadowRadius: 5,
+              shadowColor: 'black',
+              shadowOffset: { height: 0, width: 0 },
+            }}
+          >
             <ModalText>{item.name}</ModalText>
             <Button onPress={() => setModalVisible(!modalVisible)}>
               <Text>Fechar</Text>
